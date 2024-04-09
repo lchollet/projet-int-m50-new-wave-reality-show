@@ -1,0 +1,9 @@
+<a href="{{ route('maison') }}">Accueil</a>
+<a href="{{ route('concept') }}">Concept</a>
+<a href="{{ route('dernier_episode') }}">Dernier épisode</a>
+<a href="{{ route('tous_les_episodes') }}">Tous les épisodes</a>
+<a href="{{ route('contact') }}">Contact</a>
+<a href="{{ route('connexion') }}">Connexion</a>
+<a href="{{ route('mon_compte') }}">Mon compte</a>
+<a href="{{ route('info_generale') }}">Informations générales</a>
+<a href="{{ route('parametre') }}">Paramètres</a>
