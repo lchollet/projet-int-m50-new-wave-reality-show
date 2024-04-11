@@ -12,3 +12,14 @@ Pour ce faire évidemment en coulisse :
 - Gérer ses informations personnels (changer de nom et mot de passe)
 - Supprimer son compte
 
+## Avant de lancer le projet
+- npm install
+- php artsian migrate
+- php artisang db:seed
+- php artisan storage:link (pour afficher les images)
+
+## Pour lancer le projet 
+- npm run dev
+- php artisan serve
+
+
