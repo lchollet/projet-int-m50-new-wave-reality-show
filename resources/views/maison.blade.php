@@ -1,13 +1,17 @@
-
-
-    @extends('layouts.default')
+@extends('layouts.default')
 @section('content')
+
 <div class="button-container">
-    <button type="button" class="btn btmain btn-warning">CONCEPTS</button>
-    <button type="button" class="btn btmain btn-warning">PARTICIPANTS</button>
+    <div class="button-group">
+        <button type="button" class="btn btmain btn-warning">CONCEPTS</button>
+        <button type="button" class="btn btmain btn-warning">PARTICIPANTS</button>
+    </div>
+    <img src="{{ asset('storage/images/vote.png') }}" alt="vote for new wave">
+    <div class="button-group">
+        <button type="button" class="btn btmain btn-warning">TOUS LES EPISODES</button>
+        <button type="button" class="btn btmain btn-warning">CONTACT</button>
+    </div>
 </div>
-<button type="button" class="btn btnbas btn-warning">TOUS LES EPISODES</button>
-<button type="button" class="btn btnbas btn-warning">CONTACTS</button>
 
 <h1>Page principale</h1>
 <p>Bienvenue sur la page principale de notre site web. Vous pouvez naviguer sur les différentes pages en cliquant sur les liens ci-dessous.</p>
@@ -17,23 +21,25 @@
 <style>
 
 .button-container {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
     justify-content: center;
-}
-.btmain {
-   
-    scale: 3;
+    margin-bottom: 10px;
 }
 
-.btnbas {
-    
-    display: inline-flex;
-    justify-content: center;
-    scale: 3;
+@media screen and (min-width: 576px) {
+    .button-container {
+        flex-direction: row;
+    }
 
+    .button-group {
+        margin-bottom: 0;
+    }
 }
-
-
-
 
 </style>
