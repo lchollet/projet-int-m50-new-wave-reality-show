@@ -4,7 +4,7 @@
 <a href="{{ route('dernier_episode') }}">Dernier épisode</a></br>
 <a href="{{ route('tous_les_episodes') }}">Tous les épisodes</a></br>
 <a href="{{ route('contact') }}">Contact</a></br>
-<a href="{{ route('mon_compte') }}">Mon compte</a></br>
+<a href="{{ route('dashboard') }}">Mon compte</a></br>
 <a href="{{ route('info_generale') }}">Informations générales</a></br>
 <a href="{{ route('parametre') }}">Paramètres</a></br>
 <div id="copyright text-right">© Copyright 2024 new Wave </div>
