@@ -38,21 +38,27 @@
 </html>
 
 <style>
-
 .contact-container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 10px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    color: #ff7f00;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); ca peux etre beau */
+    color: var(--orange-1);
+   
 }
 
 .contact-container h1 {
-
     text-align: left;
-    color: black;
+    color: var(--black);
+}
+
+.contact-container form {
+    
+    padding-right: 20px;
+    padding-left: 20px;
+    
 }
 
 .contact-container .form-group {
@@ -62,6 +68,8 @@
 .contact-container label {
     display: block;
     margin-bottom: 5px;
+    font-weight: var(--paragraphe-font-weight);
+
 }
 
 .contact-container input[type="text"],
@@ -69,9 +77,9 @@
 .contact-container textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--grey);
     border-radius: 5px;
-    color: black; 
+    color: var(--black); 
 }
 
 .contact-container textarea {
@@ -81,17 +89,17 @@
 .contact-container .btn-submit {
     width: 100%;
     padding: 10px;
-    background-color: orange;
-    color: #fff;
+    background-color: var(--orange-1);
+    color: var(--white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: var(--paragraphe-font-weight);
 }
 
 .contact-container .btn-submit:hover {
-    background-color: #ff7f00;
+    background-color: var(--orange-2);
 }
 
 
