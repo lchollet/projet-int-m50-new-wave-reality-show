@@ -27,5 +27,7 @@ Route::get('/connexion', [PageController::class, 'connexion'])->name('connexion'
 Route::get('/mon_compte', [PageController::class, 'monCompte'])->name('mon_compte');
 Route::get('/info_generale', [PageController::class, 'infoGenerale'])->name('info_generale');
 Route::get('/parametre', [PageController::class, 'parametre'])->name('parametre');
+Route::get('/participants', [PageController::class, 'participants'])->name('participants');
+
 
 require __DIR__.'/auth.php';

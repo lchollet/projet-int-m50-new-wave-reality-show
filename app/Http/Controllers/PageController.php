@@ -52,4 +52,9 @@ class PageController extends Controller
     {
         return view('parametre');
     }
+
+    public function participants()
+    {
+        return view('participants');
+    }
 }
