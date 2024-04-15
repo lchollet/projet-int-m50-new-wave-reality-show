@@ -14,6 +14,7 @@ Pour ce faire évidemment en coulisse :
 
 ## Avant de lancer le projet
 - npm install
+- composer install
 - php artsian migrate
 - php artisang db:seed
 - php artisan storage:link (pour afficher les images)
