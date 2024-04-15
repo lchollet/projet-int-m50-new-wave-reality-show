@@ -162,4 +162,32 @@ a {
     width: 100%;
   }
 }
+
+
+@media only screen and (max-width: 500px) {
+  .footer .col {
+    width: 50%;
+  }
+  .footer .col h1 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+
+  .social ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social ul li {
+    width: 50%; /* Chaque icône prend la moitié de la largeur */
+    margin-bottom: 10px; /* Marge entre les lignes */
+  }
+}
+
+
+
+
   </style>
