@@ -13,6 +13,7 @@ Pour ce faire évidemment en coulisse :
 - Supprimer son compte
 
 ## Avant de lancer le projet
+- php artisan key:generate
 - npm install
 - composer install
 - php artsian migrate
