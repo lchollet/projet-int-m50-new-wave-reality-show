@@ -23,7 +23,7 @@
       <div class="clearfix"></div>
     </div>
     <div class="copyright">
-      <p>Copyright 2024</p>
+      <p>© wave 2024</p>
     </div>
   </div>
 </div>
@@ -53,7 +53,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding: 0px 20px 20px 20px;
-  margin: 0 30% 0 0; 
+  margin: 0 10% 0 0; 
 }
 
 .footer .col h1 {
@@ -186,7 +186,6 @@ a {
     margin-bottom: 10px; /* Marge entre les lignes */
   }
 }
-
 
 
 
