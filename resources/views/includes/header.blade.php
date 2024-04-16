@@ -29,7 +29,7 @@
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-top: 10px;
+        margin-top: 12px;
     }
 
     .profile-info {
@@ -72,7 +72,7 @@
     }
 
     .nav {
-        width: 100%; /* Assure que la liste des éléments occupe toute la largeur */
+        width: 90vw; /* Assure que la liste des éléments occupe toute la largeur */
         display: flex; /* Affiche les éléments en ligne */
         align-items: center; /* Aligner les éléments verticalement */
     }

@@ -19,6 +19,19 @@
 </html>
 
 <style>
+body {
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: normal;
+  font-style: normal;
+  color: var(--black);
+  background-color: var(--white);
+  margin: 0
+}
+
+
 :root {
   --pink-1: rgba(255, 24, 163, 1);
   --pink-2: rgba(248, 77, 174, 1);

@@ -1,34 +1,42 @@
 @extends('layouts.default')
 @section('content')
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 <div class="button-container">
     <div class="button-group">
-        <a href="/concept" class="btn btmain btn-warning">CONCEPTS</a>
-        <a href="/participants" class="btn btmain btn-warning">PARTICIPANTS</a>
+        <a href="/concept" class="btn" id="btn-concept">CONCEPTS</a>
+        <a href="/participants" class="btn" id="btn-participants">PARTICIPANTS</a>
     </div>
-    <img src="{{ asset('storage/images/vote.png') }}" alt="vote for new wave">
-    <div class="button-group">
-        <a href="/tous-les-episodes" class="btn btmain btn-warning bt2">TOUS LES EPISODES</a><br>
+    <img src="{{ asset('storage/images/vote.png') }}" alt="vote for new wave" id="img-accueil">
+    <div>
+        <a href="/tous-les-episodes" class="btn" id="btn-episodes">TOUS LES EPISODES</a><br>
     </div>
-    <div><a href="/contact" class="btn btmain btn-warning bt2">CONTACT</a></div>
+    <div><a href="/contact" class="btn" id="btn-contact">CONTACT</a></div>
 </div>
+</body>
+
 @stop
 
 <style>
 
 .button-container  img{
-    height: 300px;
-    width: 350px;
+    height: auto;
+    width: 90vw;
 }
 
 .button-container  a{
     margin: 10px;
     padding: 10px;
-    width: 200px;
+    width: 44vw;
     font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: var(--orange-1);
+    font-weight: bolder;
+    border-radius: 6px;
+    background-color: var(--orange-2);
     color: var(--white);
     text-decoration: none;
     text-align: center;
@@ -37,24 +45,43 @@
 }
 
 .button-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px 0 40px 0;
 }
 
 .button-group {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
 }
 
-@media screen and (min-width: 576px) {
-    .button-container {
-        flex-direction: column;
-    }
+#btn-episodes {
+    width: 90vw;
+}
 
-    .button-group {
-        margin-bottom: 0;
+#btn-contact {
+    width: 90vw;
+}
+
+
+@media screen and (max-width: 550px) {
+    .button-container a{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .button-container a{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .button-container a{
+        font-size: 12px;
     }
 }
 
