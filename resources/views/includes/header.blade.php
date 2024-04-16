@@ -1,15 +1,18 @@
 <div class="navbar">
     <div class="navbar-inner">
         <ul class="nav">
-            <button type="button" class="btn btn-warning btn-back" onclick="window.history.back();"><</button>
+            <?php if ($_SERVER['REQUEST_URI'] !== '/maison') { ?>
+                <button type="button" class="btn btn-warning btn-back" onclick="window.history.back();"><</button>
+            <?php } ?>
 
             {{-- <img src="{{ asset('storage/images/logo.png') }}" alt="logo new wave"> --}}
             <div class="profile-info">
-               <div classe="bonhomme">👤</div> Bobar Bonin
+               <div class="bonhomme">👤</div> Bobar Bonin
             </div>
         </ul>
     </div>
 </div>
+
 
 <style>
 
