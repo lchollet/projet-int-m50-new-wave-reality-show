@@ -1,7 +1,8 @@
 <div class="navbar">
     <div class="navbar-inner">
         <ul class="nav">
-            <button type="button" class="btn btn-warning btn-back"><</button>
+            <button type="button" class="btn btn-warning btn-back" onclick="window.history.back();"><</button>
+
             {{-- <img src="{{ asset('storage/images/logo.png') }}" alt="logo new wave"> --}}
             <div class="profile-info">
                <div classe="bonhomme">👤</div> Bobar Bonin

@@ -3,28 +3,25 @@
 
 <div class="button-container">
     <div class="button-group">
-        <button type="button" class="btn btmain btn-warning">CONCEPTS</button>
-        <button type="button" class="btn btmain btn-warning">PARTICIPANTS</button>
+        <a href="/concept" class="btn btmain btn-warning">CONCEPTS</a>
+        <a href="/participants" class="btn btmain btn-warning">PARTICIPANTS</a>
     </div>
     <img src="{{ asset('storage/images/vote.png') }}" alt="vote for new wave">
     <div class="button-group">
-        <button type="button" class="btn btmain btn-warning bt2">TOUS LES EPISODES</button><br>
+        <a href="/tous-les-episodes" class="btn btmain btn-warning bt2">TOUS LES EPISODES</a><br>
     </div>
-    <div><button type="button" class="btn btmain btn-warning bt2">CONTACT</button></div>
+    <div><a href="/contact" class="btn btmain btn-warning bt2">CONTACT</a></div>
 </div>
 @stop
 
 <style>
 
 .button-container  img{
-
     height: 300px;
     width: 350px;
- 
 }
 
-.button-container  button{
-
+.button-container  a{
     margin: 10px;
     padding: 10px;
     width: 200px;
@@ -33,11 +30,12 @@
     border-radius: 10px;
     background-color: var(--orange-1);
     color: var(--white);
-    border: none;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
-
 }
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -59,7 +57,5 @@
         margin-bottom: 0;
     }
 }
-
-
 
 </style>
