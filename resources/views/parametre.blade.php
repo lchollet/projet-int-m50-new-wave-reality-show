@@ -1,5 +1,5 @@
 @extends('layouts.default')
 @section('content')
-<p>paramettre</p>
+<p>Paramètres</p>
 
 @stop
