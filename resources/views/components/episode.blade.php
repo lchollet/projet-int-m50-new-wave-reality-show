@@ -11,13 +11,13 @@
 img {
     width: 95%;
     max-height: 250px;
-    border-radius: 10px;
+    border-radius: 6px;
     object-fit: cover;
 }
 h2 {
     font-size: 2em;
     text-align: center;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
 }
 </style>
 
