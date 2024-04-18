@@ -2,8 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-<h1>Participants</h1>
-<!-- <form action="/action_page.php"> -->
+<h1 class="participants">Participants</h1>
 <form>
   <select name="team" id="teams">
     <option value="Yverdon">Yverdon-les-bains</option>
@@ -12,7 +11,7 @@
 </form>
 
 <!-- Participants Yverdon -->
-<div class="episode-list">
+<div class="participants-list yverdon">
         @component('components.participants', ['name' => 'Omar', 'image' => 'participants/Omar.png'])
         @endcomponent
         @component('components.participants', ['name' => 'Ambre', 'image' => 'participants/Ambre.png'])
@@ -29,24 +28,61 @@
         @endcomponent
         @component('components.participants', ['name' => 'Lea', 'image' => 'participants/Lea.png'])
         @endcomponent
+</div>
+
+<!-- Participants Vaud -->
+<div class="participants-list vaud hidden">
         @component('components.participants', ['name' => 'Max', 'image' => 'participants/Max.png'])
         @endcomponent
-        @component('components.participants', ['name' => 'Leo', 'image' => 'participants/Leo.png'])
+        @component('components.participants', ['name' => 'Ela', 'image' => 'participants/Ela.png'])
         @endcomponent
-    </div>
+        @component('components.participants', ['name' => 'Lou', 'image' => 'participants/Lou.png'])
+        @endcomponent
+        @component('components.participants', ['name' => 'Andrea', 'image' => 'participants/Andrea.png'])
+        @endcomponent
+        @component('components.participants', ['name' => 'Lionel', 'image' => 'participants/Lionel.png'])
+        @endcomponent
+        @component('components.participants', ['name' => 'Marie', 'image' => 'participants/Marie.png'])
+        @endcomponent
+        @component('components.participants', ['name' => 'Jean', 'image' => 'participants/Jean.png'])
+        @endcomponent
+        @component('components.participants', ['name' => 'Ana', 'image' => 'participants/Ana.png'])
+        @endcomponent
+</div>
+
+<script>
+document.getElementById('teams').addEventListener('change', function() {
+    console.log('selected team', this.value)
+    var selectedTeam = this.value;
+    var allTeams = document.querySelectorAll('.participants-list');
+    
+    allTeams.forEach(function(team) {
+        if (team.classList.contains(selectedTeam.toLowerCase())) {
+            //remove class hidden to show the team
+            team.classList.remove('hidden');
+        } else {
+            //add class hidden to hide the team
+            team.classList.add('hidden');
+        }
+    });
+});
+</script>
+
 
     <style>
-        .episode-list {
-            display: flex;
-            flex-wrap: wrap;
+        .participants{
+            font-family: var(--h1-font-family);
+            font-weight: var(--h1-font-weight);
+            font-size: var(--h1-font-size);
         }
-
-        .episode-list>* {
-            flex: 0 0 50%;
+        .participants-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 18px; /* Adjust as needed */
         }
-        h1 {
-            font-size: 4em;
-            font-weight: bold;
+        
+        .hidden {
+            display: none;
         }
     </style>
 <!-- Participants Vaud -->
