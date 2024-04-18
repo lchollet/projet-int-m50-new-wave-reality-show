@@ -1,17 +1,37 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.default')
+@section('content')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+    <img src="{{ asset('storage/images/avatar.png') }}" alt="profil" id="avatar">
+    <h1>{{ Auth::user()->name }}</h1>
+
+    <ul>
+        <li>Compte</li>
+        <li>Notifications</li>
+        <li>Cadeaux</li>
+    </ul>
+
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" type="button" class="btn btn-warning btn-login">Disconnect</button>
+    </form>
+
+    <style>
+        h1 {
+            font-family: var(--h1-font-family);
+            font-weight: var(--h1-font-weight);
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+
+        #avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-top: 5%;
+        }
+
+    </style>
+@stop
