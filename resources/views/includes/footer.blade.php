@@ -35,7 +35,8 @@
   width: 100%;
   height: auto;
   background-color: var(--black);
-  position: relative;
+  position: fixed;
+  bottom: 0;
 }
 
 .footer .contain {
