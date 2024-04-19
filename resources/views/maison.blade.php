@@ -1,35 +1,39 @@
 @extends('layouts.default')
 @section('content')
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <title>Accueil</title>
 </head>
 <body>
-<div class="button-container">
-    <div class="button-group">
-        <a href="/concept" class="btn" id="btn-concept">CONCEPTS</a>
-        <a href="/participants" class="btn" id="btn-participants">PARTICIPANTS</a>
+<div class="home-container">
+    <div class="button-container">
+        <a href="/concept" class="home-btn" id="concept-btn">CONCEPTS</a>
+        <a href="/participants" class="home-btn" id="participants-btn">PARTICIPANTS</a>
     </div>
     <img src="{{ asset('storage/images/vote.png') }}" alt="vote for new wave" id="img-accueil">
-    <div>
-        <a href="/tous-les-episodes" class="btn" id="btn-episodes">TOUS LES EPISODES</a><br>
+    <div class="single-button">
+        <a href="/tous-les-episodes" class="home-btn" id="episodes-btn">TOUS LES EPISODES</a>
+        <a href="/contact" class="home-btn" id="contact-btn">CONTACT</a>
     </div>
-    <div><a href="/contact" class="btn" id="btn-contact">CONTACT</a></div>
 </div>
 </body>
-
 @stop
 
 <style>
-
-.button-container  img{
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
     height: auto;
-    width: 90vw;
+    margin: 50px auto;
+    padding: 20px;
 }
 
-.button-container  a{
-    margin: 10px;
-    padding: 10px;
-    width: 44vw;
+.home-btn {
+    padding: 15 0 15 0;
     font-size: 20px;
     font-weight: bolder;
     border-radius: 6px;
@@ -41,45 +45,56 @@
     transition: background-color 0.3s;
 }
 
+#img-accueil {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    
+}
+
 .button-container {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button-container{
+margin-bottom: 10px;
+}
+
+#episodes-btn {
+    margin: 10 0 5 0;
+    width: 100%;
+}
+
+#contact-btn {
+    margin: 5 0 0 0;
+    width: 100%;
+}
+
+#concept-btn {
+    margin: 0 10 0 0;
+    width: 100%;
+}
+
+#participants-btn {
+    margin: 0 0 0 10;
+    width: 100%;
+}
+
+.single-button {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    margin: 20px 0 40px 0;
+    width: 100%;
 }
 
-.button-group {
-    display: flex;
-    justify-content: center;
-}
-
-#btn-episodes {
-    width: 90vw;
-}
-
-#btn-contact {
-    width: 90vw;
+.single-button a {
+    width: 100%;
 }
 
 
-@media screen and (max-width: 550px) {
-    .button-container a{
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .button-container a{
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 270px) {
-    .button-container a{
-        font-size: 12px;
-    }
-}
-
-</style>

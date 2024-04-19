@@ -28,9 +28,9 @@ body {
   font-style: normal;
   color: var(--black);
   background-color: var(--white);
-  margin: 0
+  margin: 0;
+  min-height: 100vh;
 }
-
 
 :root {
   --pink-1: rgba(255, 24, 163, 1);

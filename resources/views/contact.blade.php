@@ -30,6 +30,7 @@
     </div>
 </body>
 </html>
+@stop
 
 <style>
 .contact-container {
@@ -98,5 +99,4 @@
 
 
 </style>
-@stop
 

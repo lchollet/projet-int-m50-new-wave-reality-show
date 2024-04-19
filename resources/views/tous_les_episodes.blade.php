@@ -1,27 +1,27 @@
 @extends('layouts.default')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <h1>Les épisodes</h1>
+    <h1 id="title-episodes">Les épisodes</h1>
     <div class="episode-list">
-        @component('components.episode', ['title' => 'Ep.1 - Découverte', 'image' => 'house.jpg'])
+        @component('components.episode', ['title' => 'Ep.1 - Qui arrivera le premier dans la ville?', 'image' => 'ville.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.2 - Embrouilles', 'image' => 'lac.jpg'])
+        @component('components.episode', ['title' => 'Ep.2 - Qui sera le Robin des Bois?', 'image' => 'bois.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.3 - La course', 'image' => 'kart.jpg'])
+        @component('components.episode', ['title' => 'Ep.3 - Qui seront les maîtres vendeurs?', 'image' => 'vendeur.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.4 - En détente', 'image' => 'detente.jpg'])
+        @component('components.episode', ['title' => 'Ep.4 - Le Flottant du lac', 'image' => 'lac.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.5 - Le gros repas', 'image' => 'table.jpg'])
+        @component('components.episode', ['title' => 'Ep.5 - Qui orchestrera la soirée la plus mémorable ?', 'image' => 'memorable.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.6 - Adieu', 'image' => '911.jpg'])
+        @component('components.episode', ['title' => 'Ep.6 - Parcours de l’impossible', 'image' => 'impossible.png'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.7 - La tarte', 'image' => 'claque.jpg'])
+        @component('components.episode', ['title' => 'Ep.7 - Chasse au trésor', 'image' => 'tresor.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.8 - La Surprise', 'image' => 'homme.jpg'])
+        @component('components.episode', ['title' => 'Ep.8 - Date ', 'image' => 'date.png'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.9 - Suspens', 'image' => 'course.jpg'])
+        @component('components.episode', ['title' => 'Ep.9 - Les masques tombent', 'image' => 'tombe.jpg'])
         @endcomponent
-        @component('components.episode', ['title' => 'Ep.10 - La Finale (18.06.26)', 'image' => 'prix.jpg'])
+        @component('components.episode', ['title' => 'Ep.10 - La Finale', 'image' => 'finale.jpg'])
         @endcomponent
     </div>
 
@@ -29,14 +29,25 @@
         .episode-list {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-evenly;
+
         }
 
         .episode-list>* {
             flex: 0 0 50%;
         }
         h1 {
-            font-size: 4em;
-            font-weight: bold;
+            font-family: var(--h1-font-family);
+            font-weight: var(--h1-font-weight);
+            font-size: var(--h1-font-size);
+            letter-spacing: var(--h1-letter-spacing);
+            line-height: var(--h1-line-height);
+            font-style: var(--h1-font-style);
+        }
+
+        #title-episodes {
+    
+            margin-bottom: 50px;
         }
     </style>
 @stop

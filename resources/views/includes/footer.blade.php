@@ -33,9 +33,9 @@
 
 .footer {
   width: 100%;
-  height: auto;
+  height: 260px;
   background-color: var(--black);
-  position: fixed;
+  position: relative;
   bottom: 0;
 }
 
