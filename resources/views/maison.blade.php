@@ -13,7 +13,6 @@
     <div><a href="/contact" class="btn btmain btn-warning bt2">CONTACT</a></div>
 </div>
 @stop
-
 <style>
 
 .button-container  img{
