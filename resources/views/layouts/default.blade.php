@@ -8,7 +8,7 @@
    <header class="row">
        @include('includes.header')
    </header>
-   <div id="main" class="row">
+   <div id="main" class="row main-content">
            @yield('content')
    </div>
    <footer class="row">
@@ -19,6 +19,23 @@
 </html>
 
 <style>
+
+
+
+
+body {
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: normal;
+  font-style: normal;
+  color: var(--black);
+  background-color: var(--white);
+  margin: 0;
+  min-height: 100vh;
+}
+
 :root {
   --pink-1: rgba(255, 24, 163, 1);
   --pink-2: rgba(248, 77, 174, 1);

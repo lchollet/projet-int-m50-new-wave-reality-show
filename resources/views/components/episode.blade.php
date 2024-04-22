@@ -1,23 +1,27 @@
 <div class="epsiode">
-    <div>
         <img src="{{ asset('storage/images/' . $image) }}" alt="image">
-    </div>
-    <div>
-        <h2>{{ $title }}</h2>
-    </div>
+        <p>{{ $title }}</p>
 </div>
 
 <style>
+
 img {
-    width: 95%;
-    max-height: 250px;
-    border-radius: 10px;
+    max-width: 300px;
+    max-height: 190px;
+    border-radius: 6px;
     object-fit: cover;
+    margin: auto;
+    display: block;
 }
-h2 {
-    font-size: 2em;
+p {
+    font-size: var(--paragraphe-font-size);
+    font-weight: var(--h2-font-weight);
+    font-size: var(--paragraphe-font-size);
+    line-height: var(--paragraphe-line-height);
+    color: var(--black);
     text-align: center;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
+    margin-top: 8px;
 }
 </style>
 

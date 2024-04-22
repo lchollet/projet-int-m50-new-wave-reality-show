@@ -1,88 +1,69 @@
 <div class="navbar">
-    <div class="navbar-inner">
-        <ul class="nav">
-            <?php if ($_SERVER['REQUEST_URI'] !== '/maison') { ?>
-                <button type="button" class="btn btn-warning btn-back" onclick="window.history.back();"><</button>
+    <a href="/"><img src="{{ asset('storage/images/logo.png') }}" alt="logo new wave" class="logo"></a>
+    <ul class="nav">
+        <li class="back-button <?php if ($_SERVER['REQUEST_URI'] === '/') { echo 'hidden'; } ?>">
+            <button type="button" class="btn btn-warning btn-back" id="back" onclick="window.history.back();">&lt;</button>
+        </li>
+        <li class="profile-info">
+            <?php if (isset($_SESSION['user'])) { ?>
+                <div class="user-profile">
+                    <img src="{{ asset('storage/images/avatar.png') }}" alt="profil" id="avatar">
+                    <p><?php echo $_SESSION['user']['name']; ?></p>
+                </div>
+            <?php } else { ?>
+                <button type="button" class="btn btn-warning btn-login" onclick="window.location.href='/login'">Login</button>
             <?php } ?>
-
-            {{-- <img src="{{ asset('storage/images/logo.png') }}" alt="logo new wave"> --}}
-            <div class="profile-info">
-               <div class="bonhomme">👤</div> Bobar Bonin
-            </div>
-        </ul>
-    </div>
+        </li>
+    </ul>
 </div>
 
 
+
 <style>
-
-    img {
-        width: 10%;
-        max-width: 1000px;
-    }
-
-    .bonhomme {
-    font-size: 200%; /* Double la taille du bonhomme */
+.navbar {
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 3%;
 }
-   
-    button.btn-login {
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        margin-top: 10px;
-    }
 
-    .profile-info {
-        margin-top: 5px;
-        font-size: 14px;
-        text-align: right;
-    }
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Espace les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+}
 
-    button.btn-back {
-        background-color: orange;
-        color: white;
-        border: none;
-        margin-right: 10px;
-    }
+.nav li {
+    margin-right: 10px; /* Ajoute un espace entre les éléments */
+}
 
-    @media (max-width: 767px) {
-        .navbar-inner {
-            text-align: center;
-        }
+#avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 
-        img {
-            width: 50%;
-        }
+button.btn-login {
+    background-color: var(--orange-2);
+}
 
-        button.btn-login {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+button.btn-login:hover {
+    background-color: var(--orange-1);
+}
 
-        .profile-info {
-            text-align: center;
-            margin-top: 5px;
-        }
-    }
+.btn-back {
+    background-color: var(--orange-2);
+    color: white;
+    border: none;
+}
 
-    .navbar-inner {
-        display: flex;
-        justify-content: space-between; /* Aligner les éléments au début et à la fin */
-        align-items: center; /* Aligner les éléments verticalement */
-    }
+.btn-back:hover {
+    background-color: var(--orange-1);
+}
 
-    .nav {
-        width: 100%; /* Assure que la liste des éléments occupe toute la largeur */
-        display: flex; /* Affiche les éléments en ligne */
-        align-items: center; /* Aligner les éléments verticalement */
-    }
-
-    .profile-info {
-        margin-left: auto; /* Déplace l'élément à droite */
-    }
-
-    .btn-back {
-        margin-right: 10px; /* Ajoute un espace après le bouton "Back" */
-    }
+/* Classe pour masquer le bouton de retour */
+.hidden {
+    display: none;
+}
 
 </style>

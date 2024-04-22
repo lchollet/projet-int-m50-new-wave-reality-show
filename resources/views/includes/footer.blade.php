@@ -23,7 +23,7 @@
       <div class="clearfix"></div>
     </div>
     <div class="copyright">
-      <p>© wave 2024</p>
+      <p>© Wave 2024</p>
     </div>
   </div>
 </div>
@@ -33,9 +33,11 @@
 
 .footer {
   width: 100%;
-  height: auto;
+  height: 16em;
   background-color: var(--black);
   position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 .footer .contain {
@@ -52,7 +54,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
+  padding: 10px 20px 60px 20px;
   margin: 0 10% 0 0; 
 }
 
@@ -76,6 +78,11 @@
 
 a {
   color: var(--white);
+}
+
+a:hover {
+  color: var(--orange-1);
+  text-decoration: none;
 }
 
 .footer .col ul li {
@@ -114,6 +121,7 @@ a {
   transform: translateX(-50%); /* Décaler de moitié de sa propre largeur vers la gauche */
   color: var(--light-grey);
   font-size: 12px;
+  margin-top: 50px;
 }
 
 .clearfix {

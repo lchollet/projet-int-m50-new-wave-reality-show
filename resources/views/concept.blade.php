@@ -8,4 +8,10 @@ Chaque week-end, des défis rapportent des points. L'équipe perdante vit dans l
 Le candidat qui gagne le grand défi du week-end peut éliminer l’adversaire de son choix. <br><br>
 
 Retrouver un épisode par semaine sur notre chaîne YouTube ainsi que la grande finale en direct sur Twitch le 18 juin 2026 !<br><br>
+
 @stop
+
+<style>
+
+</style>
+
