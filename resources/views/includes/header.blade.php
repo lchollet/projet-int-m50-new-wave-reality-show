@@ -30,7 +30,7 @@
     list-style: none;
     display: flex;
     justify-content: space-between; /* Espace les éléments */
-    align-items: center; /* Centre verticalement les éléments */
+    align-items: center; /* Centre verticalement les éléments */ 
 }
 
 .nav li {
@@ -57,9 +57,7 @@ button.btn-login:hover {
     border: none;
 }
 
-.btn-back:hover {
-    background-color: var(--orange-1);
-}
+
 
 /* Classe pour masquer le bouton de retour */
 .hidden {

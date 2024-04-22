@@ -49,6 +49,7 @@
     background-color: var(--orange-1);
     color: var(--white);
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 #img-accueil {

@@ -4,7 +4,7 @@
     <div class="contain">
       <div class="col social">
         <h1>Suis-nous !</h1>
-        <ul>
+        <ul class="social-list">
           <li><a href="https://www.tiktok.com/"><img src="{{ asset('storage/images/tiktok.png') }}" alt="Logo de tiktok" /></a></li>
           <li><a href="https://www.instagram.com/"><img src="{{ asset('storage/images/insta.png') }}" alt="Logo d'instagram" /></a></li>
           <li><a href="https://www.twitch.tv/"><img src="{{ asset('storage/images/twitch.png') }}" alt="Logo de twitch" /></a></li>
@@ -110,8 +110,8 @@ a:hover {
 }
 
 .footer img {
-  width: 30px;
-  height: 30px;
+  max-width: 1.8em;
+  height: auto;
 }
 
 .footer .copyright {
