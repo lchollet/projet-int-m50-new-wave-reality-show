@@ -40,8 +40,11 @@ class VotesSeeder extends Seeder
         foreach ($votes as $voteData) {
             DB::table('vote')->insert([
                 'vote' => $voteData,
-                'question_id' => rand(1, 10), 
+                'question_id' => rand(1, 10),
                 'answer_id' => rand(1, 10),
+                'startVotingAt' => now(),
+                'endVotingAt' => now(),
+                'user_id' => rand(1, 10),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
