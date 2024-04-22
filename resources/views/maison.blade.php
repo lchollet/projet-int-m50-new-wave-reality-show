@@ -19,7 +19,6 @@
 </div>
 </body>
 @stop
-
 <style>
 .home-container {
     display: flex;
