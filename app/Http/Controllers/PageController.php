@@ -12,6 +12,14 @@ class PageController extends Controller
     {
         return view('maison');
     }
+    public function repondrevote()
+    {
+        return view('repondrevote');
+    }
+    public function affichagereponsevote()
+    {
+        return view('affichagereponsevote');
+    }
 
     public function concept()
     {
@@ -31,7 +39,7 @@ class PageController extends Controller
     {
         return view('creationvote');
     }
-
+/* 
     public function storeVote(Request $request)
     {
         // Valider les données du formulaire
@@ -60,7 +68,7 @@ class PageController extends Controller
 
         
         
-    }
+    } */
 
 
 

@@ -28,9 +28,12 @@ Route::get('/mon_compte', [PageController::class, 'monCompte'])->name('mon_compt
 Route::get('/info_generale', [PageController::class, 'infoGenerale'])->name('info_generale');
 Route::get('/parametre', [PageController::class, 'parametre'])->name('parametre');
 Route::get('/participants', [PageController::class, 'participants'])->name('participants');
-Route::get('/creationvote', [PageController::class, 'storeVote'])->name('storeVote');
-Route::post('/creationvote', [PageController::class, 'store'])->name('creationvotepost');
+Route::get('/creationvotes', [PageController::class, 'creationvote'])->name('creationvote');
+Route::get('/repondrevote', [PageController::class, 'repondrevote'])->name('repondrevote');
+Route::get('/affichagereponsevote', [PageController::class, 'affichagereponsevote'])->name('affichagereponsevote');
 
+/* Route::post('/creationvote', [PageController::class, 'store'])->name('creationvotepost');
+ */
 
 
 
