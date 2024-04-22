@@ -27,6 +27,42 @@ class PageController extends Controller
     {
         return view('tous_les_episodes');
     }
+    public function creationvote()
+    {
+        return view('creationvote');
+    }
+
+    public function storeVote(Request $request)
+    {
+        // Valider les données du formulaire
+        $validatedData = $request->validate([
+            'titre' => 'required|string',
+            'date_debut' => 'required|date',
+            'date_fin' => 'required|date',
+            'option' => 'required|array|min:2', // Au moins 2 options nécessaires
+            'option.*' => 'string', // Chaque option doit être une chaîne
+        ]);
+
+        // Créer un nouveau vote avec les données validées
+        $vote = new Vote();
+        $vote->titre = $validatedData['titre'];
+        $vote->date_debut = $validatedData['date_debut'];
+        $vote->date_fin = $validatedData['date_fin'];
+        $vote->save();
+
+        // Enregistrer les options du vote
+        foreach ($validatedData['option'] as $optionText) {
+            $vote->options()->create(['texte' => $optionText]);
+        }
+
+        // Rediriger vers une page de confirmation ou une autre action
+        return redirect()->route('vote.confirmation');
+
+        
+        
+    }
+
+
 
     public function contact()
     {
