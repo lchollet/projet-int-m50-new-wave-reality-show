@@ -1,14 +1,16 @@
 @extends('layouts.default')
 @section('content')
+<div class="content">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <h1 class="participants">Participants</h1>
-<form>
+<form class="select">
   <select name="team" id="teams">
     <option value="Yverdon">Yverdon-les-bains</option>
     <option value="Vaud">Vaud</option>
   </select>
 </form>
+
 
 <!-- Participants Yverdon -->
 <div class="participants-list yverdon">
@@ -49,6 +51,7 @@
         @component('components.participants', ['name' => 'Ana', 'image' => 'participants/Ana.png'])
         @endcomponent
 </div>
+</div>
 
 <script>
 document.getElementById('teams').addEventListener('change', function() {
@@ -70,20 +73,77 @@ document.getElementById('teams').addEventListener('change', function() {
 
 
     <style>
-        .participants{
-            font-family: var(--h1-font-family);
-            font-weight: var(--h1-font-weight);
-            font-size: var(--h1-font-size);
-        }
-        .participants-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 18px; /* Adjust as needed */
-        }
-        
-        .hidden {
-            display: none;
-        }
+    .content{
+        margin-right: 40px;
+        margin-left: 40px;
+        margin-bottom: 40px;
+    }
+    .participants{
+        font-family: var(--h1-font-family);
+        font-weight: var(--h1-font-weight);
+        font-size: var(--h1-font-size);
+    }
+    .participants-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 18px; /* Adjust as needed */
+    }
+    
+    .hidden {
+        display: none;
+    }
+
+
+    /* ------------- */
+    :root {
+  --gray: var(--orange-3);
+  --darkgray: var(--orange-3);
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--orange-3); 
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+  margin-bottom: 20px
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: var(--orange-2);
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: white;
+}
+
     </style>
 <!-- Participants Vaud -->
 @stop
