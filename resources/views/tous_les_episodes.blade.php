@@ -1,6 +1,7 @@
 @extends('layouts.default')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <div class="episode-container">
     <h1 id="title-episodes">Les épisodes</h1>
     <div class="episode-list">
         @component('components.episode', ['title' => 'Ep.1 - Qui arrivera le premier dans la ville?', 'image' => 'ville.jpg'])
@@ -24,10 +25,18 @@
         @component('components.episode', ['title' => 'Ep.10 - La Finale', 'image' => 'finale.jpg'])
         @endcomponent
     </div>
+    </div>
 
     <style>
+
+        .episode-container{
+            max-width: 65%;
+            margin: auto;
+            margin-top: 1.5em;
+        }
+
         .episode-list {
-            display: flex;
+            display: column;
             flex-wrap: wrap;
             justify-content: space-evenly;
 
@@ -46,8 +55,7 @@
         }
 
         #title-episodes {
-    
-            margin-bottom: 50px;
+            margin-bottom: 1.5em;
         }
     </style>
 @stop

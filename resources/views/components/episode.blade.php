@@ -6,8 +6,8 @@
 <style>
 
 img {
-    max-width: 300px;
-    max-height: 190px;
+    max-width: 100%;
+    max-height: auto;
     border-radius: 6px;
     object-fit: cover;
     margin: auto;
