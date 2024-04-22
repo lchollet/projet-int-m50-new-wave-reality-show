@@ -26,15 +26,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    max-width: 65%;
     height: auto;
-    margin: 50px auto;
-    padding: 20px;
+    margin: 3em auto;
+    padding: 1em;
 }
 
 .home-btn {
     padding: 15 0 15 0;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bolder;
     border-radius: 6px;
     background-color: var(--orange-2);
@@ -43,6 +43,12 @@
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+    background-color: var(--orange-1);
+    color: var(--white);
+    text-decoration: none;
 }
 
 #img-accueil {
@@ -62,7 +68,7 @@
 }
 
 .button-container{
-margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #episodes-btn {
@@ -96,5 +102,29 @@ margin-bottom: 10px;
 .single-button a {
     width: 100%;
 }
+
+
+@media screen and (max-width: 37.5em) {
+
+    .home-btn{
+    font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 30em) {
+
+    .home-btn{
+    font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 23.5em) {
+
+    .home-btn{
+    font-size: 0.7em;
+    }
+}
+
+</style>
 
 

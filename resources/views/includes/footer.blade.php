@@ -33,10 +33,11 @@
 
 .footer {
   width: 100%;
-  height: 260px;
+  height: 16em;
   background-color: var(--black);
   position: relative;
   bottom: 0;
+  left: 0;
 }
 
 .footer .contain {
@@ -77,6 +78,11 @@
 
 a {
   color: var(--white);
+}
+
+a:hover {
+  color: var(--orange-1);
+  text-decoration: none;
 }
 
 .footer .col ul li {

@@ -8,7 +8,7 @@
    <header class="row">
        @include('includes.header')
    </header>
-   <div id="main" class="row">
+   <div id="main" class="row main-content">
            @yield('content')
    </div>
    <footer class="row">
@@ -19,6 +19,10 @@
 </html>
 
 <style>
+
+
+
+
 body {
   font-family: "Inter", Helvetica;
   font-weight: 400;

@@ -44,13 +44,21 @@
 }
 
 button.btn-login {
-    background-color: rgba(255, 131, 72, 1);
+    background-color: var(--orange-2);
+}
+
+button.btn-login:hover {
+    background-color: var(--orange-1);
 }
 
 .btn-back {
-    background-color: rgba(255, 131, 72, 1);
+    background-color: var(--orange-2);
     color: white;
     border: none;
+}
+
+.btn-back:hover {
+    background-color: var(--orange-1);
 }
 
 /* Classe pour masquer le bouton de retour */
