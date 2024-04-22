@@ -30,4 +30,26 @@ Route::get('/parametre', [PageController::class, 'parametre'])->name('parametre'
 Route::get('/participants', [PageController::class, 'participants'])->name('participants');
 
 
+//participants 
+Route::get('/omar', [PageController::class, 'omar'])->name('omar');
+Route::get('/ambre', [PageController::class, 'ambre'])->name('ambre');
+Route::get('/julie', [PageController::class, 'julie'])->name('julie');
+Route::get('/aron', [PageController::class, 'aron'])->name('aron');
+Route::get('/sofia', [PageController::class, 'sofia'])->name('sofia');
+Route::get('/julien', [PageController::class, 'julien'])->name('julien');
+Route::get('/theo', [PageController::class, 'theo'])->name('theo');
+Route::get('/lea', [PageController::class, 'lea'])->name('lea');
+
+Route::get('/max', [PageController::class, 'max'])->name('max');
+Route::get('/ela', [PageController::class, 'ela'])->name('ela');
+Route::get('/lou', [PageController::class, 'lou'])->name('lou');
+Route::get('/lionel', [PageController::class, 'lionel'])->name('lionel');
+Route::get('/andrea', [PageController::class, 'andrea'])->name('andrea');
+Route::get('/marie', [PageController::class, 'marie'])->name('marie');
+Route::get('/jean', [PageController::class, 'jean'])->name('jean');
+Route::get('/ana', [PageController::class, 'ana'])->name('ana');
+
+
+
+
 require __DIR__ . '/auth.php';
