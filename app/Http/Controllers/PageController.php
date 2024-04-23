@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Vote;
 
 
 class PageController extends Controller
@@ -14,9 +15,34 @@ class PageController extends Controller
     {
         return view('maison');
     }
+
+    public function submitVote(Request $request) {
+        // Récupérer les données du vote envoyées depuis le formulaire
+        $selectedOption = $request->input('option');
+    
+        // Enregistrer le vote dans la base de données
+        // Par exemple, vous pouvez créer un nouveau enregistrement dans votre table de votes
+        $vote = new Vote();
+        $vote->vote = $selectedOption;
+        $vote->save();
+    
+    }
+    
     public function repondrevote()
     {
-        return view('repondrevote');
+        // Récupérer le der vote depuis db
+        $lastQuestion = Question::latest()->first();
+    
+       
+        if ($lastQuestion) {
+            // Récup rép correspondantes à la dernière question
+            $options = Answer::where('question_id', $lastQuestion->id)->get();
+            
+            return view('repondrevote', compact('lastQuestion', 'options'));
+        } else {
+            
+            return redirect()->back()->with('error', 'Aucun vote disponible actuellement.');
+        }  
     }
     public function affichagereponsevote()
     {
