@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Models\Question;
 
 
 class PageController extends Controller
@@ -38,6 +39,31 @@ class PageController extends Controller
     public function creationvote()
     {
         return view('creationvote');
+    }
+    public function storeVote(Request $request)
+    {
+
+        $request->validate([
+            'text_question' => 'required|max:32',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
+            
+        ]);
+
+        $question = new Question();
+
+        $question->text_question= $request->input('text_question');
+        $question->start_date= $request->input('start_date');
+        $question->end_date= $request->input('end_date');
+        $question->save();
+
+        // Additional logic or redirection after successful data storage
+        return redirect()->back()->with('success', 'Comment stored successfully!');
+
+
+
+
+
     }
 /* 
     public function storeVote(Request $request)

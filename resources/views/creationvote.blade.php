@@ -7,19 +7,25 @@
 </head>
 <body>
     <div class="vote-container">
+        @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
         <h1>Créer un vote</h1>
         <form action="/creationvote" method="post">
+            @csrf
             <div class="form-group">
-                <label for="titre">Titre du vote</label>
-                <input type="text" id="titre" name="titre" placeholder="Entrer le titre du vote" required>
+                <label for="text_question">titre du vote</label>
+                <input type="text" id="text_question" name="text_question" placeholder="Entrer le titre du vote" required>
             </div>
             <div class="form-group">
-                <label for="date_debut">Date de début</label>
-                <input type="date" id="date_debut" name="date_debut" required>
+                <label for="start_date">Date de début</label>
+                <input type="date" id="start_date" name="start_date" required>
             </div>
             <div class="form-group">
-                <label for="date_fin">Date de fin</label>
-                <input type="date" id="date_fin" name="date_fin" required>
+                <label for="end_date">Date de fin</label>
+                <input type="date" id="end_date" name="end_date" required>
             </div>
             <div class="form-group options-group">
                 <label>Options de réponse</label>
