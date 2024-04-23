@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Models\Answer;
 use App\Models\Question;
 
 
@@ -42,28 +43,32 @@ class PageController extends Controller
     }
     public function storeVote(Request $request)
     {
-
         $request->validate([
             'text_question' => 'required|max:32',
             'start_date' => 'required|date',
             'end_date' => 'required|date',
-            
+            'option.*' => 'required', // Validation pour chaque option
         ]);
-
+    
         $question = new Question();
-
-        $question->text_question= $request->input('text_question');
-        $question->start_date= $request->input('start_date');
-        $question->end_date= $request->input('end_date');
+        $question->text_question = $request->input('text_question');
+        $question->start_date = $request->input('start_date');
+        $question->end_date = $request->input('end_date');
         $question->save();
-
-        // Additional logic or redirection after successful data storage
-        return redirect()->back()->with('success', 'Comment stored successfully!');
-
-
-
-
-
+    
+        // Récupération de l'id de la question nouvellement créée
+        $questionId = $question->id;
+    
+        // Enregistrement des réponses pour chaque option
+        foreach ($request->input('option') as $option) {
+            $answer = new Answer();
+            $answer->question_id = $questionId;
+            $answer->answer = $option;
+            $answer->save();
+        }
+    
+        // Redirection avec un message de succès
+        return redirect()->back()->with('success', 'Vote enregistré avec succès !');
     }
 /* 
     public function storeVote(Request $request)
