@@ -21,8 +21,6 @@
     <a href="/"><img src="{{ asset('storage/images/logo.png') }}" alt="logo new wave" class="logo"></a>
 </div>
 
-
-
 <style>
 .navbar {
     text-align: center;
