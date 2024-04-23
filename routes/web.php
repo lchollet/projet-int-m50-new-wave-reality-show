@@ -33,6 +33,7 @@ Route::get('/repondrevote', [PageController::class, 'repondrevote'])->name('repo
 Route::get('/affichagereponsevote', [PageController::class, 'affichagereponsevote'])->name('affichagereponsevote');
 
 Route::post('/creationvote', [PageController::class, 'storeVote'])->name('creationvotepost');
+Route::post('/submit-vote', [PageController::class, 'submitVote'])->name('submitVote');
 
 
 

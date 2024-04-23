@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Vote;
 
 
 class PageController extends Controller
@@ -13,9 +15,34 @@ class PageController extends Controller
     {
         return view('maison');
     }
+
+    public function submitVote(Request $request) {
+        // Récupérer les données du vote envoyées depuis le formulaire
+        $selectedOption = $request->input('option');
+    
+        // Enregistrer le vote dans la base de données
+        // Par exemple, vous pouvez créer un nouveau enregistrement dans votre table de votes
+        $vote = new Vote();
+        $vote->vote = $selectedOption;
+        $vote->save();
+    
+    }
+    
     public function repondrevote()
     {
-        return view('repondrevote');
+        // Récupérer le der vote depuis db
+        $lastQuestion = Question::latest()->first();
+    
+       
+        if ($lastQuestion) {
+            // Récup rép correspondantes à la dernière question
+            $options = Answer::where('question_id', $lastQuestion->id)->get();
+            
+            return view('repondrevote', compact('lastQuestion', 'options'));
+        } else {
+            
+            return redirect()->back()->with('error', 'Aucun vote disponible actuellement.');
+        }  
     }
     public function affichagereponsevote()
     {
@@ -42,28 +69,32 @@ class PageController extends Controller
     }
     public function storeVote(Request $request)
     {
-
         $request->validate([
             'text_question' => 'required|max:32',
             'start_date' => 'required|date',
             'end_date' => 'required|date',
-            
+            'option.*' => 'required', // Validation pour chaque option
         ]);
-
+    
         $question = new Question();
-
-        $question->text_question= $request->input('text_question');
-        $question->start_date= $request->input('start_date');
-        $question->end_date= $request->input('end_date');
+        $question->text_question = $request->input('text_question');
+        $question->start_date = $request->input('start_date');
+        $question->end_date = $request->input('end_date');
         $question->save();
-
-        // Additional logic or redirection after successful data storage
-        return redirect()->back()->with('success', 'Comment stored successfully!');
-
-
-
-
-
+    
+        // Récupération de l'id de la question nouvellement créée
+        $questionId = $question->id;
+    
+        // Enregistrement des réponses pour chaque option
+        foreach ($request->input('option') as $option) {
+            $answer = new Answer();
+            $answer->question_id = $questionId;
+            $answer->answer = $option;
+            $answer->save();
+        }
+    
+        // Redirection avec un message de succès
+        return redirect()->back()->with('success', 'Vote enregistré avec succès !');
     }
 /* 
     public function storeVote(Request $request)

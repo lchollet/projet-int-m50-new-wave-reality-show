@@ -8,23 +8,27 @@
 <body>
     <div class="response-container">
         <h1>Répondre au vote</h1>
-        <div class="options-container">
-            <h2>Quelle participant fera le défi d’aujourd’hui les yeux bandés ?</h2>
-            <button class="option-button" onclick="submitVote('Bonar')">Bonar</button>
-            <button class="option-button" onclick="submitVote('Bionel')">Bionel</button>
-            <button class="option-button" onclick="submitVote('Bacha')">Bacha</button>
-        </div>
-        <p id="vote-message" style="display: none;">Merci pour votre vote. Les résultats auront lieu dans 24 heures.</p>
+        @if ($lastQuestion)
+        <form action="/submit-vote" method="POST" id="vote-form">
+            @csrf 
+            <div class="options-container">
+                <h2>{{ $lastQuestion->text_question }}</h2>
+                @if ($options)
+                @foreach($options as $option)
+                <button class="option-button" name="option" value="{{ $option->answer }}">{{ $option->answer }}</button>
+                @endforeach
+                @else
+                <p>Aucune option disponible pour ce vote.</p>
+                @endif
+            </div>
+            <p id="vote-message" style="display: none;">Merci pour votre vote. Les résultats auront lieu dans 24 heures.</p>
+            <button type="submit">Soumettre</button>
+        </form>
+        @else
+        <p>Aucun vote disponible actuellement.</p>
+        @endif
     </div>
 
-    <script>
-        function submitVote(option) {
-            // Ici, vous enverrez l'option sélectionnée au serveur pour enregistrer la réponse.
-            // Pour cet exemple, nous affichons simplement le message de confirmation.
-            document.getElementById('vote-message').style.display = 'block';
-            document.querySelector('.options-container').innerHTML = ''; // Effacer les boutons d'options
-        }
-    </script>
 </body>
 </html>
 @stop
