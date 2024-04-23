@@ -24,7 +24,7 @@
 
             <!-- Password -->
             <div class="form-group mt-4">
-                <label for="password">{{ __('Password') }}</label>
+                <label for="password">{{ __('Mot de passe') }}</label>
                 <input id="password" class="block mt-1 w-full"
                                 type="password"
                                 name="password"
@@ -40,19 +40,19 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ms-2 text-sm text-gray-600">{{ __('Se souvenir de moi') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                <button type="submit" class="ms-3">
+                    {{ __('Se connecter') }}
+                </button>
                 <a href="{{ route('register') }}">
-                    <button type="button" class="ms-3">
-                        {{ __('Register') }}
+                    <button type="button" class="ms-3" id="register">
+                        {{ __('Créer un compte') }}
                     </button>
                 </a>
-                <button type="submit" class="ms-3">
-                    {{ __('Log in') }}
-                </button>
             </div>
         </form>
     </div>
@@ -134,6 +134,12 @@
 
 .contact-container button[type="button"]:hover {
     background-color: var(--grey-dark);
+}
+
+#register {
+    background-color: var(--orange-3);
+    margin-top: 2px;
+    margin-bottom: 3px;
 }
 
 </style>
