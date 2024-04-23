@@ -45,6 +45,8 @@ class QuestionsSeeder extends Seeder
 
             DB::table('question')->insert([
                 'text_question' => $questionsData,
+                'start_date' => now(),
+                'end_date' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

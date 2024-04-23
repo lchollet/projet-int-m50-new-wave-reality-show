@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('vote', function (Blueprint $table) {
             $table->id();
-            $table->boolean('vote');
-            $table->foreignId('question_id')->references('id')->on('questions')->onDelete('cascade');
-            $table->foreignId('answer_id')->references('id')->on('answers')->onDelete('cascade');
+            $table->foreignId('question_id')->references('id')->on('question')->onDelete('cascade');
+            $table->foreignId('answer_id')->references('id')->on('answer')->onDelete('cascade');
             $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
