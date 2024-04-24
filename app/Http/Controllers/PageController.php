@@ -140,6 +140,11 @@ class PageController extends Controller
         return view('epreuves');
     }
 
+    public function robindesbois()
+    {
+        return view('robindesbois');
+    }
+
     //participants
 
     public function omar()

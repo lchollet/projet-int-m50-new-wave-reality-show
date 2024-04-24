@@ -1,6 +1,8 @@
 @extends('layouts.default')
 @section('content')
 <div class="content">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
+
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 <h1 class="participants">Participants</h1>
@@ -94,8 +96,8 @@ document.getElementById('teams').addEventListener('change', function() {
     }
 
 
-    /* ------------- */
-    :root {
+/* ------------- */
+:root {
   --gray: var(--orange-3);
   --darkgray: var(--orange-3);
 }

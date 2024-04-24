@@ -7,6 +7,7 @@
 <h3 class="description"> Ci-dessous la liste des différentes épreuves auxquelles tu peux toi aussi participer et avoir l’occasion de rencontrer nos aventuriers !</h3>
 
     <div class="contestList">
+        <a href="/robin-des-bois">
         <div class="contestCard">
             <div class="daysLabel">
                 <p class="daysLabelText">38 PLACES RESTANTES !</p>
@@ -16,6 +17,7 @@
                 <p class="contestTitle">QUI SERA LE ROBIN DES BOIS ?</p>
             </div>
         </div>
+        </a>
 
         <div class="contestCard comingSoon">
         <div class="daysLabel">

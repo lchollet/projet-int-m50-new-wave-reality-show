@@ -59,6 +59,7 @@ Route::get('/ana', [PageController::class, 'ana'])->name('ana');
 
 //participation aux épreuves
 Route::get('/epreuves', [PageController::class, 'epreuves'])->name('epreuves');
+Route::get('/robin-des-bois', [PageController::class, 'robindesbois'])->name('robindesbois');
 
 
 
