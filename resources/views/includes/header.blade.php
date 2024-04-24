@@ -8,14 +8,15 @@
         <li class="empty">
         </li>
         <li class="profile-info">
-            <?php if (isset($_SESSION['name'])) { ?>
-                <div class="user-profile">
-                    <img src="{{ asset('storage/images/avatar.png') }}" alt="profil" id="avatar">
-                    <p><?php echo $_SESSION['name']; ?></p> <!-- Afficher le nom d'utilisateur -->
-                </div>
-            <?php } else { ?>
-                <button type="button" class="btn btn-warning btn-login" onclick="window.location.href='/login'">Login</button>
-            <?php } ?>
+            @if (Auth::check())
+            <div class="user-profile">
+                <a href="/dashboard"><img src="{{ asset('storage/images/avatar.png') }}" alt="profil" id="avatar"></a>
+                <p>{{ Auth::user()->name }}</p> <!-- Afficher le nom d'utilisateur -->
+            </div>
+        @else
+            <button type="button" class="btn btn-warning btn-login" onclick="window.location.href='/login'">Login</button>
+        @endif
+        
         </li>        
     </ul>
     <a href="/"><img src="{{ asset('storage/images/logo.png') }}" alt="logo new wave" class="logo"></a>
