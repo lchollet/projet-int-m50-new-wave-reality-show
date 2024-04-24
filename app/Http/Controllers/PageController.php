@@ -16,24 +16,25 @@ class PageController extends Controller
         return view('maison');
     }
 
+    // fonction qui est appelée lorsqu'un utilisateur soumet un vote / réponse
     public function submitVote(Request $request) {
         // Récupérer les données du vote envoyées depuis le formulaire
         $selectedOption = $request->input('option');
+        $selectedOption = (int)$selectedOption;
     
         // Enregistrer le vote dans la base de données
         // Par exemple, vous pouvez créer un nouveau enregistrement dans votre table de votes
         $vote = new Vote();
-        $vote->vote = $selectedOption;
+        $vote->answer_id = $selectedOption;
         $vote->save();
     
     }
     
     public function repondrevote()
     {
-        // Récupérer le der vote depuis db
+        // Récupérer le dernier question depuis db
         $lastQuestion = Question::latest()->first();
     
-       
         if ($lastQuestion) {
             // Récup rép correspondantes à la dernière question
             $options = Answer::where('question_id', $lastQuestion->id)->get();
@@ -44,6 +45,7 @@ class PageController extends Controller
             return redirect()->back()->with('error', 'Aucun vote disponible actuellement.');
         }  
     }
+
     public function affichagereponsevote()
     {
         return view('affichagereponsevote');
@@ -96,39 +98,6 @@ class PageController extends Controller
         // Redirection avec un message de succès
         return redirect()->back()->with('success', 'Vote enregistré avec succès !');
     }
-/* 
-    public function storeVote(Request $request)
-    {
-        // Valider les données du formulaire
-        $validatedData = $request->validate([
-            'titre' => 'required|string',
-            'date_debut' => 'required|date',
-            'date_fin' => 'required|date',
-            'option' => 'required|array|min:2', // Au moins 2 options nécessaires
-            'option.*' => 'string', // Chaque option doit être une chaîne
-        ]);
-
-        // Créer un nouveau vote avec les données validées
-        $vote = new Vote();
-        $vote->titre = $validatedData['titre'];
-        $vote->date_debut = $validatedData['date_debut'];
-        $vote->date_fin = $validatedData['date_fin'];
-        $vote->save();
-
-        // Enregistrer les options du vote
-        foreach ($validatedData['option'] as $optionText) {
-            $vote->options()->create(['texte' => $optionText]);
-        }
-
-        // Rediriger vers une page de confirmation ou une autre action
-        return redirect()->route('vote.confirmation');
-
-        
-        
-    } */
-
-
-
     public function contact()
     {
         return view('contact');

@@ -15,7 +15,7 @@
                 <h2>{{ $lastQuestion->text_question }}</h2>
                 @if ($options)
                 @foreach($options as $option)
-                <button class="option-button" name="option" value="{{ $option->answer }}">{{ $option->answer }}</button>
+                <button class="option-button" name="option" value="{{ $option->id }}">{{ $option->answer }}</button>
                 @endforeach
                 @else
                 <p>Aucune option disponible pour ce vote.</p>
