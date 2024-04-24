@@ -42,6 +42,8 @@
         display: block;
 
         cursor: pointer;
+
+        width: fit-content;
     }
 
     .card-details {

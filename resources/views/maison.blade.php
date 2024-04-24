@@ -9,7 +9,7 @@
     <div id=container>
         <div class=home-huge-card>
             <a href="/vote">
-                @component('components.huge-card', ['button' => 'Je vote!'])
+                @component('components.huge-card', ['button' => 'Je vote!', 'background' => 'house.jpg', 'eventDate' => '27 dec'])
                 @endcomponent
             </a>
         </div>    
@@ -20,7 +20,7 @@
             @endcomponent
         </div>
         <div class=home-huge-card>
-            @component('components.huge-card', ['button' => 'Je participe à une épreuve !'])
+            @component('components.huge-card', ['button' => 'Je participe à une épreuve !', 'background' => 'robin-des-bois.png', 'eventDate' => '27 dec'])
             @endcomponent
         </div>
         <div id="second-double-row">
@@ -49,7 +49,7 @@
         justify-content: center;
         margin-top: 1.5em;
         justify-content: space-evenly;
-        margin-top: 1.5em;
+        margin-bottom: 2em;
     }
 
     #first-double-row{
@@ -57,7 +57,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin: 1.5em;
         gap: 1em;
     }
 
@@ -66,7 +65,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        margin:1.5em;
+        margin: 0em 1.5em 1.5em 1.5em;
     }
 
 

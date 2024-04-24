@@ -28,48 +28,59 @@
 
 
 .huge-card {
-  background-color: var(--light-grey);
+  /* background-color: var(--light-grey); */
+  background-image: url("{{ asset('storage/images/' . $background) }}");
   padding: 0.5em;
   border-radius: 6px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 100%;
+  margin: 0 auto;
+  max-width: 40em;
+  height: auto;
+  padding: 2em;
 }
 
 .countdown-container {
-  border-radius: 24px;
-  max-width: 50%;
-  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto;
   background-color: rgba(255, 105, 36, 0.8);
-  display: flex; /* Utilise Flexbox pour organiser les éléments horizontalement */
-  justify-content: space-around; /* Pour espacer les éléments également */
-  align-items: center; /* Pour centrer verticalement les éléments */
-  gap: 1em; /* Pour ajouter un espace entre les éléments */
-  padding: 10 5 10 5;
-  margin: 1em auto;
+  border-radius: 24px;
 }
 
 .count-down-box {
   text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
   text-align: center;
   max-width: 100%;
-  flex: 1; /* Pour que chaque countdown box prenne autant d'espace que possible */
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around; 
+  align-items: center; 
+  max-width: 20em;
+  height: 5em;
 }
 
 .count-down-box h1 {
-  font-size: 2em;
-  color: white;
+  font-size: 1.5em;
+  color: var(--white);
+  font-weight: 800;
 }
 
 .count-down-box p {
-  font-size: 13px;
-  color: white;
+  font-size: 0.8em;
+  color: var(--white);
+  font-weight: 400;
 }
 
 .card-button  {
     border: none;
     padding: 5px 10px;
     border-radius: 6px;
+    width: fit-content;
+
         
     font-weight: 700;
     color: var(--white) !important;
@@ -93,15 +104,15 @@ const remSeconds = document.getElementById("seconds");
 
 const currentYear = new Date().getFullYear();
 
-const birthDay = `27 Dec ${currentYear}`;
+const EventDate = `{{$eventDate}} ${currentYear}`;
 
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
 const countdown = () => {
-  const birthDayDate = new Date(birthDay);
+  const EventDateDay = new Date(EventDate);
   const currentDate = new Date();
 
-  const totalSeconds = (birthDayDate - currentDate) / 1000;
+  const totalSeconds = (EventDateDay - currentDate) / 1000;
 
   const hours = Math.floor(totalSeconds / 3600) % 24;
   const mins = Math.floor(totalSeconds / 60) % 60;
