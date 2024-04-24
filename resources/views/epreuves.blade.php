@@ -15,6 +15,7 @@
 
             <div class="contestTitleDiv">
                 <p class="contestTitle">QUI SERA LE ROBIN DES BOIS ?</p>
+                <p class="contestDescription">Rejoins l'énorme barbecue organisé par tes participants préférés à Yverdon ! et aide nous à décider quelle équipe aura fait les meilleures grillades !</p> <!-- Ajout de la description -->
             </div>
         </div>
         </a>
@@ -29,6 +30,21 @@
 </div>
 
 <script>
+        // JavaScript pour afficher la description au survol
+        const contestTitleDiv = document.querySelector('.contestCard');
+    const contestDescription = contestTitleDiv.querySelector('.contestDescription');
+
+    const contestTitle = contestTitleDiv.querySelector('.contestTitle');
+
+    contestTitleDiv.addEventListener('mouseenter', function() {
+        contestDescription.style.display = 'flex';
+        contestTitle.style.display = 'none';
+    });
+
+    contestTitleDiv.addEventListener('mouseleave', function() {
+        contestDescription.style.display = 'none';
+        contestTitle.style.display = 'block';
+    });
 </script>
 
 
@@ -100,12 +116,26 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        position: relative; /* Ajout pour positionner la description */
     }
     .contestTitle{
         color: var(--white);
         font-family: var(--h1-font-family);
         font-size: var(--h1-font-size);
         font-weight: 1000;
+    }
+    .contestDescription {
+        display: none;
+        padding: 10px;
+        color: var(--white);
+        /* add a black trensparent background */
+        background-color: rgba(0, 0, 0, 0.7);
+        font-weight: 700;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%; /* Largeur ajustable */
+        height: 100%; /* Hauteur ajustable */
+        z-index: 1; /* Pour s'assurer que la description apparaît au-dessus */
     }
 </style>
 <!-- Participants Vaud -->
