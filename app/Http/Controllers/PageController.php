@@ -128,6 +128,14 @@ class PageController extends Controller
         return view('participants');
     }
 
+    //épreuves
+    public function epreuves()
+    {
+        return view('epreuves');
+    }
+
+    //participants
+
     public function omar()
     {
         return view('participants/omar');
@@ -150,7 +158,7 @@ class PageController extends Controller
 
     public function sofia()
     {
-        return view('sofia');
+        return view('participants/sofia');
     }
 
     public function julien()

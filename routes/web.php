@@ -57,6 +57,10 @@ Route::get('/marie', [PageController::class, 'marie'])->name('marie');
 Route::get('/jean', [PageController::class, 'jean'])->name('jean');
 Route::get('/ana', [PageController::class, 'ana'])->name('ana');
 
+//participation aux épreuves
+Route::get('/epreuves', [PageController::class, 'epreuves'])->name('epreuves');
+
+
 
 
 
