@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/maison', [PageController::class, 'maison'])->name('maison');
+Route::get('/maison', [PageController::class, 'accueil'])->name('accueil');
 Route::get('/concept', [PageController::class, 'concept'])->name('concept');
 Route::get('/dernier_episode', [PageController::class, 'dernierEpisode'])->name('dernier_episode');
 Route::get('/tous-les-episodes', [PageController::class, 'tousLesEpisodes'])->name('tous_les_episodes');

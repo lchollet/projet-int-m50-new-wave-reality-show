@@ -1,27 +1,27 @@
-<div class="huge-card">
+<div class="huge-card-{{ $uniqueIdentifier }}">
     <div class = "countdown-container">
         <div class="count-down-box">
           <div class="count-down-box">
             <div class="count-down">
-              <h1 id="hours">00</h1>
+              <h1 id="hours-{{$uniqueIdentifier}}">00</h1>
               <p>Heures</p>
             </div>
           </div>
           <div class="count-down-box">
             <div class="count-down">
-              <h1 id="minutes">00</h1>
+              <h1 id="minutes-{{$uniqueIdentifier}}">00</h1>
               <p>Minutes</p>
             </div>
           </div>
           <div class="count-down-box">
             <div class="count-down">
-              <h1 id="seconds">00</h1>
+              <h1 id="seconds-{{$uniqueIdentifier}}">00</h1>
               <p>Secondes</p>
             </div>
           </div>
         </div> 
     </div>
-<a class="huge-card-button">{{$button}}</a>
+<a class="huge-card-button" href="{{ $link }}"> {{ $button }} </a>
 </div>
 
 <style>
@@ -30,6 +30,7 @@
 .huge-card {
   /* background-color: var(--light-grey); */
   background-image: url("{{ asset('storage/images/' . $background) }}");
+    background-size: cover;
   padding: 0.5em;
   border-radius: 6px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -40,6 +41,7 @@
   height: auto;
   padding: 2em;
 }
+
 
 .countdown-container {
   display: flex;
@@ -99,34 +101,35 @@
 </style>
 
 <script>
-const remHours = document.getElementById("hours");
-const remMinutes = document.getElementById("minutes");
-const remSeconds = document.getElementById("seconds");
+    (function() {
+        const remHours = document.getElementById("hours-{{$uniqueIdentifier}}");
+        const remMinutes = document.getElementById("minutes-{{$uniqueIdentifier}}");
+        const remSeconds = document.getElementById("seconds-{{$uniqueIdentifier}}");
 
-const currentYear = new Date().getFullYear();
+        const currentYear = new Date().getFullYear();
 
-const EventDate = `{{$eventDate}} ${currentYear}`;
+        const EventDate = `{{$eventDate}} ${currentYear}`;
 
-const formatTime = (time) => (time < 10 ? `0${time}` : time);
+        const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
-const countdown = () => {
-  const EventDateDay = new Date(EventDate);
-  const currentDate = new Date();
+        const countdown = () => {
+            const EventDateDay = new Date(EventDate);
+            const currentDate = new Date();
 
-  const totalSeconds = (EventDateDay - currentDate) / 1000;
+            const totalSeconds = (EventDateDay - currentDate) / 1000;
 
-  const hours = Math.floor(totalSeconds / 3600) % 24;
-  const mins = Math.floor(totalSeconds / 60) % 60;
-  const seconds = Math.floor(totalSeconds) % 60;
+            const hours = Math.floor(totalSeconds / 3600) % 24;
+            const mins = Math.floor(totalSeconds / 60) % 60;
+            const seconds = Math.floor(totalSeconds) % 60;
 
-  remHours.innerHTML = formatTime(hours);
-  remMinutes.innerHTML = formatTime(mins);
-  remSeconds.innerHTML = formatTime(seconds);
-};
+            remHours.innerHTML = formatTime(hours);
+            remMinutes.innerHTML = formatTime(mins);
+            remSeconds.innerHTML = formatTime(seconds);
+        };
 
-// initial call
-countdown();
+        // initial call
+        countdown();
 
-setInterval(countdown, 1000);
-
+        setInterval(countdown, 1000);
+    })();
 </script>

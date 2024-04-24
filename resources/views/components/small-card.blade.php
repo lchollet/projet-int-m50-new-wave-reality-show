@@ -1,12 +1,12 @@
 <div class="card">
-    <img src="{{ asset('storage/images/' . $image) }}" alt="{{$alt}}">
-    <p>{{$texte}}</p>
-    <a class="small-card-button">{{$button}}</a>
+    <img class="small-card-img" src="{{ asset('storage/images/' . $image) }}" alt="{{$alt}}">
+    <p class="small-card-text">{{$texte}}</p>
+    <a class="small-card-button" href="{{ $link }}">{{$button}}</a>
 </div>
 
 <style>
 
-    img {
+    .small-card-img {
         width: 60px;
         object-fit: cover;
         height: auto;
@@ -27,7 +27,7 @@
         align-items: flex-start;
     }
 
-    p {
+    .small-card-text {
         font-size: 1em;
         color: var(--black);
         padding: 0.5em 0em 0.5em 0em;

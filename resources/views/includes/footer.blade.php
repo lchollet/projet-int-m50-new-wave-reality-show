@@ -14,7 +14,7 @@
       <div class="col">
         <h1>Menu</h1>
         <ul>
-          <li><a href="{{ route('maison')}}">Accueil</a></li>
+          <li><a href="{{ route('accueil')}}">Accueil</a></li>
           <li><a href="{{ route('concept') }}">Concept</a></li>
           <li><a href="{{ route('tous_les_episodes') }}">Les épisodes</a></li>
           <li><a href="{{ route('contact') }}">Contacts</a></li>

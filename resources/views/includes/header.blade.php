@@ -52,11 +52,11 @@
 }
 
 button.btn-login {
-    background-color: var(--orange-2);
+    background-color: var(--orange-1);
 }
 
 button.btn-login:hover {
-    background-color: var(--orange-1);
+    background-color: var(--orange-2);
 }
 
 .btn-back {
