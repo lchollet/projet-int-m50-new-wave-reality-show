@@ -1,15 +1,13 @@
 <div class="card">
     <img src="{{ asset('storage/images/' . $image) }}" alt="{{$alt}}">
-    <div class="card-details">
-        <p>{{$texte}}</p>
-        <a class="card-button">{{$button}}</a>
-    </div>
+    <p>{{$texte}}</p>
+    <a class="small-card-button">{{$button}}</a>
 </div>
 
 <style>
 
     img {
-        width: 4em;
+        width: 60px;
         object-fit: cover;
         height: auto;
 
@@ -21,15 +19,22 @@
         border-radius: 6px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
-        width: 45%;
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 11em;
+        align-items: flex-start;
     }
 
     p {
         font-size: 1em;
         color: var(--black);
+        padding: 0.5em 0em 0.5em 0em;
+        text-align: left;
     }
 
-    .card-button {
+    .small-card-button {
         border: none;
         padding: 5px 10px;
         border-radius: 6px;
@@ -37,21 +42,24 @@
         font-weight: 700;
         color: var(--white) !important;
         background-color: var(--orange-1);
+        font-size: 0.9em;
 
-        margin: 0 auto;
-        display: block;
+        display: inline;
 
         cursor: pointer;
 
         width: fit-content;
+        align-self: flex-start;
+        margin-top: auto;
     }
 
-    .card-details {
-        padding: 16px 8px 8px 8px;
+    .small-card-button a{
+        text-decoration: none;
+        color: var(--white);
     }
 
-    .card-button:focus,
-    .card-button:hover {
+    .small-card-button:focus,
+    .small-card-button:hover {
         background-color: var(--orange-2);
     }
 

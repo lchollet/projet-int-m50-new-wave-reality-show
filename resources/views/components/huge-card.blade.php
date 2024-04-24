@@ -21,7 +21,7 @@
           </div>
         </div> 
     </div>
-<a class="card-button">{{$button}}</a>
+<a class="huge-card-button">{{$button}}</a>
 </div>
 
 <style>
@@ -75,11 +75,12 @@
   font-weight: 400;
 }
 
-.card-button  {
+.huge-card-button  {
     border: none;
     padding: 5px 10px;
     border-radius: 6px;
     width: fit-content;
+    display: block;
 
         
     font-weight: 700;
@@ -90,8 +91,8 @@
     margin: 0 auto;
     }
 
-.card-button:focus,
-.card-button:hover {
+.huge-card-button:focus,
+.huge-card-button:hover {
     background-color: var(--orange-2);
     }
 
