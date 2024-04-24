@@ -55,6 +55,10 @@ Route::post('/submit-vote', [PageController::class, 'submitVote'])->name('submit
 // Route::get('/jean', [PageController::class, 'jean'])->name('jean');
 // Route::get('/ana', [PageController::class, 'ana'])->name('ana');
 
+//participation aux épreuves
+Route::get('/epreuves', [PageController::class, 'epreuves'])->name('epreuves');
+
+
 
 
 
