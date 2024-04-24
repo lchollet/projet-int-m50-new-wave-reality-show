@@ -6,124 +6,67 @@
     <title>Accueil</title>
 </head>
 <body>
-<div class="home-container">
-    <div class="button-container">
-        <a href="/concept" class="home-btn" id="concept-btn">CONCEPTS</a>
-        <a href="/participants" class="home-btn" id="participants-btn">PARTICIPANTS</a>
+    <div id=container>
+        <div class=home-huge-card>
+            @component('components.huge-card', ['button' => 'Je vote!'])
+            @endcomponent
+        </div>    
+        <div id="first-double-row">
+            @component('components.small-card', ['alt' => 'Logo de New Wave', 'image' => 'logo.png', 'texte' => 'Découvre le concept de l\'émission.', 'button' => 'Le concept'])
+            @endcomponent
+            @component('components.small-card', ['alt' => 'Icône représentant des participants', 'image' => 'vector-participants.png', 'texte' => 'Les participants de New Wave!', 'button' => 'Les participants'])
+            @endcomponent
+        </div>
+        <div class=home-huge-card>
+            @component('components.huge-card', ['button' => 'Je participe à une épreuve !'])
+            @endcomponent
+        </div>
+        <div id="second-double-row">
+            @component('components.small-card', ['alt' => 'Icône d\'un écran', 'image' => 'watch.png', 'texte' => 'Reagarde nos épisodes gratuitement.', 'button' => 'Tous les épisodes'])
+            @endcomponent
+            @component('components.small-card', ['alt' => 'Icône d\'une lettre', 'image' => 'contact.png', 'texte' => 'Une demande?', 'button' => 'Nous contacter'])
+            @endcomponent
+        </div>
     </div>
-    <img src="{{ asset('storage/images/vote.png') }}" alt="vote for new wave" id="img-accueil">
-    <div class="single-button">
-        <a href="/tous-les-episodes" class="home-btn" id="episodes-btn">TOUS LES EPISODES</a>
-        <a href="/contact" class="home-btn" id="contact-btn">CONTACT</a>
-    </div>
-</div>
 </body>
+
 @stop
+
+
 <style>
-.home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 65%;
-    height: auto;
-    margin: 3em auto;
-    padding: 1em;
-}
 
-.home-btn {
-    padding: 15 0 15 0;
-    font-size: 1.25em;
-    font-weight: bolder;
-    border-radius: 6px;
-    background-color: var(--orange-2);
-    color: var(--white);
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.home-btn:hover {
-    background-color: var(--orange-1);
-    color: var(--white);
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-#img-accueil {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    object-fit: cover;
-    
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.button-container{
-    margin-bottom: 10px;
-}
-
-#episodes-btn {
-    margin: 10 0 5 0;
-    width: 100%;
-}
-
-#contact-btn {
-    margin: 5 0 0 0;
-    width: 100%;
-}
-
-#concept-btn {
-    margin: 0 10 0 0;
-    width: 100%;
-}
-
-#participants-btn {
-    margin: 0 0 0 10;
-    width: 100%;
-}
-
-.single-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.single-button a {
-    width: 100%;
-}
-
-
-@media screen and (max-width: 37.5em) {
-
-    .home-btn{
-    font-size: 1em;
+    .home-huge-card {
+        width: 100%;
+        margin: 1.5em;
     }
-}
 
-@media screen and (max-width: 30em) {
-
-    .home-btn{
-    font-size: 0.8em;
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5em;
+        justify-content: space-evenly;
+        margin-top: 1.5em;
     }
-}
 
-@media screen and (max-width: 23.5em) {
-
-    .home-btn{
-    font-size: 0.7em;
+    #first-double-row{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 1.5em;
+        gap: 1em;
     }
-}
+
+    #second-double-row{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin:1.5em;
+    }
+
 
 </style>
 
