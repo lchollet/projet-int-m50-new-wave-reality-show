@@ -16,19 +16,25 @@ class PageController extends Controller
         return view('maison');
     }
 
-    // fonction qui est appelée lorsqu'un utilisateur soumet un vote / réponse
     public function submitVote(Request $request) {
         // Récupérer les données du vote envoyées depuis le formulaire
         $selectedOption = $request->input('option');
         $selectedOption = (int)$selectedOption;
     
+        $questionId = $request->input('question_id'); 
+        $userId = $request->input('user_id'); // Récupérer l'ID de l'utilisateur à partir du formulaire
+    
         // Enregistrer le vote dans la base de données
         // Par exemple, vous pouvez créer un nouveau enregistrement dans votre table de votes
         $vote = new Vote();
+        $vote->question_id = $questionId;
         $vote->answer_id = $selectedOption;
+        $vote->user_id = $userId; // Associer l'ID de l'utilisateur au vote
         $vote->save();
     
-    }
+        // Rediriger vers la page d'accueil
+        return redirect()->route('maison');
+    }    
     
     public function repondrevote()
     {

@@ -16,8 +16,6 @@ class VotesSeeder extends Seeder
             DB::table('vote')->insert([
                 'question_id' => rand(1, 10),
                 'answer_id' => rand(1, 10),
-                'start_date' => now(),
-                'end_date' => now(),
                 'user_id' => rand(1, 10),
                 'created_at' => now(),
                 'updated_at' => now(),

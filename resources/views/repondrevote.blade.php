@@ -11,24 +11,25 @@
         @if ($lastQuestion)
         <form action="/submit-vote" method="POST" id="vote-form">
             @csrf 
+            <input type="hidden" name="question_id" value="{{ $lastQuestion->id }}">
+            <input type="hidden" name="user_id" value="{{ Auth::id() }}"> <!-- Ajout du champ caché pour stocker l'ID de l'utilisateur -->
             <div class="options-container">
                 <h2>{{ $lastQuestion->text_question }}</h2>
                 @if ($options)
-                @foreach($options as $option)
-                <button class="option-button" name="option" value="{{ $option->id }}">{{ $option->answer }}</button>
-                @endforeach
+                    @foreach($options as $option)
+                        <button class="option-button" name="option" value="{{ $option->id }}">{{ $option->answer }}</button>
+                    @endforeach
                 @else
-                <p>Aucune option disponible pour ce vote.</p>
+                    <p>Aucune option disponible pour ce vote.</p>
                 @endif
             </div>
             <p id="vote-message" style="display: none;">Merci pour votre vote. Les résultats auront lieu dans 24 heures.</p>
             <button type="submit">Soumettre</button>
         </form>
         @else
-        <p>Aucun vote disponible actuellement.</p>
+            <p>Aucun vote disponible actuellement.</p>
         @endif
     </div>
-
 </body>
 </html>
 @stop
