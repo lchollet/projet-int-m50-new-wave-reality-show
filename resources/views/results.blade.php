@@ -7,7 +7,6 @@
 </head>
 <body>
     <div class="response-container">
-        <h1>Réponses au vote</h1>
         <div class="results-container">
             <h2>Résultats du vote :</h2>
             @if($results->isEmpty())
@@ -19,15 +18,14 @@
                 @foreach($results as $result)
                     @if($result->answer)
                         @php
-                            $percentage = $totalVotes != 0 ? ($result->total_votes / $totalVotes) * 100 : 0;
+                            $percentage = $totalVotes != 0 ? round(($result->total_votes / $totalVotes) * 100) : 0;
                         @endphp
                         <div class="result-bar" style="width: {{ $percentage }}%;">{{ $result->answer->answer }} ({{ $percentage }}%)</div>
                     @endif
                 @endforeach
             @endif
         </div>
-    </div>
-     
+    </div>    
 </body>
 </html>
 @stop

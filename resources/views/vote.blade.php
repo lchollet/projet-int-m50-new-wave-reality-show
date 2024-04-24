@@ -24,7 +24,6 @@
                 @endif
             </div>
             <p id="vote-message" style="display: none;">Merci pour votre vote. Les résultats auront lieu dans 24 heures.</p>
-            <button type="submit">Soumettre</button>
         </form>
         @else
             <p>Aucun vote disponible actuellement.</p>

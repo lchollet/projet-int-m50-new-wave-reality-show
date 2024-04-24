@@ -26,8 +26,8 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/parametre', [PageController::class, 'parametre'])->name('parametre');
 Route::get('/participants', [PageController::class, 'participants'])->name('participants');
 Route::get('/creationvote', [PageController::class, 'creationvote'])->name('creationvote');
-Route::get('/vote', [PageController::class, 'repondrevote'])->name('vote');
-Route::get('/results', [PageController::class, 'showResults'])->name('results');
+Route::get('/vote', [PageController::class, 'repondrevote'])->name('vote')->middleware('auth');
+Route::get('/results', [PageController::class, 'showResults'])->name('results')->middleware('auth');
 
 
 Route::post('/creationvote', [PageController::class, 'storeVote'])->name('creationvotepost');
