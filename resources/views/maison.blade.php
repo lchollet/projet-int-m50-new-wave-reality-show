@@ -8,8 +8,10 @@
 <body>
     <div id=container>
         <div class=home-huge-card>
-            @component('components.huge-card', ['button' => 'Je vote!'])
-            @endcomponent
+            <a href="/vote">
+                @component('components.huge-card', ['button' => 'Je vote!'])
+                @endcomponent
+            </a>
         </div>    
         <div id="first-double-row">
             @component('components.small-card', ['alt' => 'Logo de New Wave', 'image' => 'logo.png', 'texte' => 'Découvre le concept de l\'émission.', 'button' => 'Le concept'])
