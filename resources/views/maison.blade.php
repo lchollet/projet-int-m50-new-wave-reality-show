@@ -23,7 +23,7 @@
             @endcomponent
         </div>
         <div id="second-double-row">
-            @component('components.small-card', ['alt' => 'Icône d\'un écran', 'image' => 'watch.png', 'texte' => 'Reagarde nos épisodes gratuitement.', 'button' => 'Tous les épisodes', 'link' => '/tous_les_episodes'])
+            @component('components.small-card', ['alt' => 'Icône d\'un écran', 'image' => 'watch.png', 'texte' => 'Reagarde nos épisodes gratuitement.', 'button' => 'Tous les épisodes', 'link' => '/tous-les-episodes'])
             @endcomponent
             @component('components.small-card', ['alt' => 'Icône d\'une lettre', 'image' => 'contact.png', 'texte' => 'Une demande?', 'button' => 'Nous contacter', 'link' => '/contact'])
             @endcomponent
